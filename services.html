@@ -9,22 +9,38 @@
 </head>
 <body class="font-sans bg-gray-50">
 
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <div class="flex items-center space-x-4 space-x-reverse">
+ <header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <div class="flex items-center space-x-4 space-x-reverse">
+      <a href="index.html">
         <img src="assets/images/logo.png.jpeg" alt="شعار الصفوة" class="h-20">
-      </div>
-      <nav class="hidden md:flex items-center gap-6 text-base font-medium">
-        <a href="index.html" class="text-gray-600 hover:text-primary">الرئيسية</a>
-        <a href="about.html" class="text-gray-600 hover:text-primary">من نحن</a>
-        <a href="services.html" class="text-primary active">خدماتنا</a>
-        <a href="blog.html" class="text-gray-600 hover:text-primary">المقالات</a>
-        <a href="social.html" class="text-gray-600 hover:text-primary">مناسبات اجتماعية</a>
-        <a href="contact.html" class="bg-accent text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition">تواصل معنا</a>
-      </nav>
+      </a>
     </div>
-  </header>
-
+    <nav class="hidden md:flex items-center gap-6 text-base font-medium">
+      <a href="index.html" class="text-gray-600 hover:text-primary">الرئيسية</a>
+      <a href="about.html" class="text-gray-600 hover:text-primary">من نحن</a>
+      <a href="services.html" class="text-gray-600 hover:text-primary">خدماتنا</a>
+      <a href="blog.html" class="text-gray-600 hover:text-primary">المقالات</a>
+      <a href="social.html" class="text-gray-600 hover:text-primary">مناسبات</a>
+      <a href="contact.html" class="bg-accent text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition">تواصل معنا</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <a href="index.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">الرئيسية</a>
+    <a href="about.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">من نحن</a>
+    <a href="services.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">خدماتنا</a>
+    <a href="blog.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">المقالات</a>
+    <a href="social.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">مناسبات</a>
+    <a href="contact.html" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100">تواصل معنا</a>
+  </div>
+</header>
   <main>
     <section class="py-20 text-center hero-gradient">
       <div class="container mx-auto px-6">

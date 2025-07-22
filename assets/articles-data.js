@@ -33,5 +33,12 @@ const articles = [
     link: "articles/hidden-defect.html",
     date: "2025-07-12",
     category: "القانون المدني"
+  },
+  {
+    title: "حماية المستهلك في العقود الإلكترونية",
+    summary: "نظرة تحليلية على ضمانات المستهلك في ظل التشريعات الأردنية الحديثة.",
+    link: "articles/consumer-protection.html",
+    date: "2025-07-10",
+    category: "القانون المدني"
   }
 ];

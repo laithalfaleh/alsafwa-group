@@ -12,7 +12,7 @@
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <div class="flex items-center space-x-4 space-x-reverse">
-        <img src="assets/images/logo.png.jpeg" alt="شعار الصفوة" class="h-20">
+        <img src="assets/images/logo.png" alt="شعار الصفوة" class="h-20">
       </div>
       <nav class="hidden md:flex items-center gap-6 text-base font-medium">
         <a href="index.html" class="text-gray-600 hover:text-primary">الرئيسية</a>
@@ -31,10 +31,11 @@
           <p class="text-xl text-gray-700 max-w-3xl mx-auto">تحليلات ورؤى قانونية لمساعدتك على فهم حقوقك والتزاماتك في عالم متغير.</p>
         </div>
     </section>
+
     <section class="container mx-auto px-6 py-20">
-    <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        </div>
-</section>
+        <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
   </main>
 
   <footer class="bg-white border-t py-8">
@@ -42,33 +43,41 @@
       <p>&copy; 2025 مجموعة الصفوة للقانون والمحاماة والتحكيم. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
-<script src="assets/articles-data.js"></script>
-<script>
-  // 1. احصل على العنصر الحاوي (الوعاء) الذي سنضع فيه المقالات
-  const articlesGrid = document.getElementById('articles-grid');
 
-  // 2. قم بترتيب المقالات من الأحدث إلى الأقدم بناءً على التاريخ
-  articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+  <script src="assets/articles-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. احصل على العنصر الحاوي (الوعاء) الذي سنضع فيه المقالات
+      const articlesGrid = document.getElementById('articles-grid');
 
-  // 3. لكل مقال في قائمة البيانات، قم بإنشاء بطاقة HTML الخاصة به
-  articles.forEach(article => {
-    const articleCardHTML = `
-      <article class="bg-white rounded-lg overflow-hidden shadow-md article-card flex flex-col">
-          <div class="p-6 flex flex-col h-full">
-              <h2 class="text-2xl font-bold text-primary mb-3">${article.title}</h2>
-              <p class="text-gray-600 mb-4 flex-grow">${article.summary}</p>
-              <div class="mt-auto">
-                  <a href="${article.link}" class="font-semibold text-accent hover:underline">
-                    اقرأ المقال كاملاً →
-                  </a>
-              </div>
-          </div>
-      </article>
-    `;
+      // التأكد من وجود الوعاء وقائمة المقالات قبل المتابعة
+      if (articlesGrid && typeof articles !== 'undefined') {
+        
+        // 2. قم بترتيب المقالات من الأحدث إلى الأقدم بناءً على التاريخ
+        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // 4. أضف كود البطاقة الجديد إلى الوعاء
-    articlesGrid.innerHTML += articleCardHTML;
-  });
-</script>
+        // 3. لكل مقال في قائمة البيانات، قم بإنشاء بطاقة HTML الخاصة به
+        articles.forEach(article => {
+          const articleCardHTML = `
+            <article class="bg-white rounded-lg overflow-hidden shadow-md article-card flex flex-col">
+                <div class="p-6 flex flex-col h-full">
+                    <h2 class="text-2xl font-bold text-primary mb-3">${article.title}</h2>
+                    <p class="text-gray-600 mb-4 flex-grow">${article.summary}</p>
+                    <div class="mt-auto">
+                        <a href="${article.link}" class="font-semibold text-accent hover:underline">
+                          اقرأ المقال كاملاً →
+                        </a>
+                    </div>
+                </div>
+            </article>
+          `;
+
+          // 4. أضف كود البطاقة الجديد إلى الوعاء
+          articlesGrid.innerHTML += articleCardHTML;
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -31,69 +31,10 @@
           <p class="text-xl text-gray-700 max-w-3xl mx-auto">تحليلات ورؤى قانونية لمساعدتك على فهم حقوقك والتزاماتك في عالم متغير.</p>
         </div>
     </section>
-
     <section class="container mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-         <article class="bg-white rounded-lg overflow-hidden shadow-md article-card">
-    <div class="p-6">
-        <h2 class="text-2xl font-bold text-primary mb-3">
-          حينما تُسرق الثقة: نظرة في جريمة الاحتيال
-        </h2>
-        <p class="text-gray-600 mb-4">
-          نظرة عميقة في جريمة الاحتيال، ليس فقط من منظور القانون، بل من زاوية إنسانية تمس الثقة والضعف والأمل في الإصلاح.
-        </p>
-        <a href="articles/human-view-on-fraud.html" class="font-semibold text-accent hover:underline">
-          اقرأ المقال كاملاً →
-        </a>
-    </div>
-</article>
-                </div>
-            </article>
-          <article class="bg-white rounded-lg overflow-hidden shadow-md article-card">
-    <div class="p-6">
-        <h2 class="text-2xl font-bold text-primary mb-3">
-          العيب الخفي وتأثيره القانوني
-        </h2>
-        <p class="text-gray-600 mb-4">
-          مفهوم العيب الخفي وكيف يحمي القانون المشتري في حال اكتشافه.
-        </p>
-        <a href="articles/hidden-defect.html" class="font-semibold text-accent hover:underline">
-          اقرأ المقال كاملاً →
-        </a>
-    </div>
-</article>
-
-            <<article class="bg-white rounded-lg overflow-hidden shadow-md article-card">
-    <div class="p-6">
-        <h2 class="text-2xl font-bold text-primary mb-3">
-          مسؤولية المتبوع عن أعمال تابعه
-        </h2>
-        <p class="text-gray-600 mb-4">
-          لماذا يعتبر صاحب العمل مسؤولاً عن أخطاء موظفيه؟ نظرة قانونية وإنسانية في مبدأ يوازن بين السلطة والمسؤولية لحماية المجتمع.
-        </p>
-        <a href="articles/vicarious-liability.html" class="font-semibold text-accent hover:underline">
-          اقرأ المقال كاملاً →
-        </a>
-    </div>
-</article>
-
-           <article class="bg-white rounded-lg overflow-hidden shadow-md article-card">
-    <div class="p-6">
-        <h2 class="text-2xl font-bold text-primary mb-3">
-          خيانة الثقة: جريمة إساءة الأمانة
-        </h2>
-        <p class="text-gray-600 mb-4">
-          ماذا يحدث عندما تُكسر رابطة الثقة؟ نظرة قانونية وإنسانية عميقة في جريمة إساءة الأمانة، التي تبدأ بالثقة وتنتهي بالخيانة.
-        </p>
-        <a href="articles/breach-of-trust.html" class="font-semibold text-accent hover:underline">
-          اقرأ المقال كاملاً →
-        </a>
-    </div>
-</article>
-
+    <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         </div>
-    </section>
+</section>
   </main>
 
   <footer class="bg-white border-t py-8">
@@ -101,6 +42,33 @@
       <p>&copy; 2025 مجموعة الصفوة للقانون والمحاماة والتحكيم. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
+<script src="assets/articles-data.js"></script>
+<script>
+  // 1. احصل على العنصر الحاوي (الوعاء) الذي سنضع فيه المقالات
+  const articlesGrid = document.getElementById('articles-grid');
 
+  // 2. قم بترتيب المقالات من الأحدث إلى الأقدم بناءً على التاريخ
+  articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // 3. لكل مقال في قائمة البيانات، قم بإنشاء بطاقة HTML الخاصة به
+  articles.forEach(article => {
+    const articleCardHTML = `
+      <article class="bg-white rounded-lg overflow-hidden shadow-md article-card flex flex-col">
+          <div class="p-6 flex flex-col h-full">
+              <h2 class="text-2xl font-bold text-primary mb-3">${article.title}</h2>
+              <p class="text-gray-600 mb-4 flex-grow">${article.summary}</p>
+              <div class="mt-auto">
+                  <a href="${article.link}" class="font-semibold text-accent hover:underline">
+                    اقرأ المقال كاملاً →
+                  </a>
+              </div>
+          </div>
+      </article>
+    `;
+
+    // 4. أضف كود البطاقة الجديد إلى الوعاء
+    articlesGrid.innerHTML += articleCardHTML;
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+body {
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+  background-color: #f8f9fa; /* لون خلفية أفتح قليلاً */
+}
+
+/* Header & Footer */
+header, footer {
+  background-color: #ffffff;
+  border-color: #dee2e6;
+}
+
+/* Primary Colors */
+.text-primary {
+  color: #0d2a4d; /* كحلي داكن */
+}
+.bg-primary {
+  background-color: #0d2a4d;
+}
+.border-primary {
+  border-color: #0d2a4d;
+}
+
+/* Accent Color */
+.text-accent {
+  color: #c5a773; /* ذهبي أنيق */
+}
+.bg-accent {
+  background-color: #c5a773;
+}
+.border-accent {
+  border-color: #c5a773;
+}
+
+/* Navigation Link Hover Effect */
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c5a773; /* ذهبي */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+nav a.active {
+    color: #0d2a4d;
+    font-weight: 700;
+}
+
+
+/* Hero Section Gradient */
+.hero-gradient {
+  background: linear-gradient(270deg, #eaf2ff, #f8f9fa);
+}
+
+/* Card Styling */
+.service-card, .article-card, .profile-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.service-card:hover, .article-card:hover, .profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}

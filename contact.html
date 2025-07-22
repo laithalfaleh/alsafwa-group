@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا | مجموعة الصفوة للقانون</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center space-x-4 space-x-reverse">
+        <img src="assets/images/logo.png.jpeg" alt="شعار الصفوة" class="h-16">
+        <span class="text-xl font-bold text-primary">مجموعة الصفوة للقانون</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-base font-medium">
+        <a href="index.html" class="text-gray-600 hover:text-primary">الرئيسية</a>
+        <a href="about.html" class="text-gray-600 hover:text-primary">من نحن</a>
+        <a href="services.html" class="text-gray-600 hover:text-primary">خدماتنا</a>
+        <a href="blog.html" class="text-gray-600 hover:text-primary">المقالات</a>
+        <a href="contact.html" class="bg-accent text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-20 text-center hero-gradient">
+        <div class="container mx-auto px-6">
+          <h1 class="text-5xl font-extrabold text-primary mb-4">تواصل مع فريقنا</h1>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">نحن هنا للإجابة على استفساراتكم وتقديم الدعم القانوني. املأ النموذج أو تواصل معنا مباشرة.</p>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-5 gap-12">
+        
+        <div class="md:col-span-3 bg-white p-8 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-primary mb-6">أرسل استفسارك</h2>
+          <form action="https://formsubmit.co/laithkhalfaleh@gmail.com" method="POST" class="space-y-6">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://laithalfaleh.github.io/laithalbaroon1/thanks.html">
+            
+            <div>
+              <label for="name" class="block text-gray-700 font-semibold mb-2">الاسم الكامل</label>
+              <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent">
+            </div>
+
+            <div>
+              <label for="email" class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent">
+            </div>
+
+            <div>
+              <label for="message" class="block text-gray-700 font-semibold mb-2">الرسالة أو الاستشارة</label>
+              <textarea id="message" name="message" rows="6" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-md font-bold text-lg hover:bg-opacity-90 transition">إرسال الرسالة</button>
+          </form>
+        </div>
+
+        <div class="md:col-span-2 space-y-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-primary mb-4">معلومات الاتصال</h3>
+                <div class="space-y-3 text-gray-700">
+                    <p><strong>الهاتف:</strong> <a href="tel:+962782328189" class="hover:text-accent" dir="ltr">+962 7 8232 8189</a></p>
+                    <p><strong>البريد الإلكتروني:</strong> <a href="mailto:laithkhalfaleh@gmail.com" class="hover:text-accent">laithkhalfaleh@gmail.com</a></p>
+                    <p><strong>العنوان:</strong> عمّان، الأردن (يمكنك إضافة العنوان التفصيلي هنا)</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-primary mb-4">تواصل عبر واتساب</h3>
+                <p class="text-gray-600 mb-4">للحصول على رد أسرع، يمكنك التواصل معنا مباشرة عبر واتساب.</p>
+                <a href="https://wa.me/962782328189" target="_blank" class="w-full block text-center bg-green-500 text-white py-3 px-6 rounded-md font-bold hover:bg-green-600 transition">
+                    واتساب
+                </a>
+            </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-white border-t py-8">
+    <div class="container mx-auto text-center text-gray-600">
+      <p>&copy; 2025 مجموعة الصفوة للقانون والمحاماة والتحكيم. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
